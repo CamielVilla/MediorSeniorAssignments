@@ -25,27 +25,35 @@ public class MediorFour {
     public static void main(String[] args) {
 
         List<Integer> result = numberStringToArrayList("123123145");
+        List<String> stringResult = numberListToStringList(result);
+        printNumbers(stringResult);
+        }
 
-    }
+
 
     public static List<Integer> numberStringToArrayList(String numbers) {
         List<Integer> numberList = new ArrayList<>();
-
         for(char character : numbers.toCharArray()) {
             numberList.add(Integer.parseInt(String.valueOf(character)));
         }
         return numberList;
     }
 
-    //TODO: Maak deze methode af.
+////    //TODO: Maak deze methode af.
     public static List<String> numberListToStringList(List<Integer> numbers) {
         List<String> wordNumbers = new ArrayList<>();
 
+        for(int i=0; i < numbers.size(); i++) {
+            String str = numberToWord(i);
+            wordNumbers.add(str.toString());
+        }
         return wordNumbers;
     }
 
-    public static String numberToWord(int number) {
-        switch(number) {
+
+
+    public static String numberToWord(int numbers) {
+        switch(numbers) {
             case 0:
                 return "zero";
             case 1:
@@ -71,9 +79,19 @@ public class MediorFour {
         }
     }
 
-    //TODO Maak deze methode af.
-    public static void printNumbers() {
 
+
+
+
+
+    //TODO Maak deze methode af.
+    public static void printNumbers(List<String> numbers) {
+    List<String> strList = new ArrayList<>() ;
+
+    for (int i=0; i < numbers.size(); i++){
+        strList.add(i + "-");
+    }
+        System.out.println(strList);
     }
 
 }

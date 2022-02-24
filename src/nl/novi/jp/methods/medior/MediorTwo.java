@@ -9,6 +9,12 @@ package nl.novi.jp.methods.medior;
 public class MediorTwo {
 
     public static void main(String[] args) {
+        int myAge = 32;
+        if(isOldEnough(myAge)) {
+            printProceed();
+        }else {
+            printUnderAgeWarning();
+        }
 
     }
 
@@ -19,6 +25,8 @@ public class MediorTwo {
             return false;
         }
     }
+
+
 
     public static void printUnderAgeWarning() {
         System.out.println("You are not old enough for this activity!");
